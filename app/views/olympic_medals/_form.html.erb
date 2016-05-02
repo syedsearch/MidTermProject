@@ -1,0 +1,37 @@
+<%= form_for(@olympic_medal) do |f| %>
+  <% if @olympic_medal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@olympic_medal.errors.count, "error") %> prohibited this olympic_medal from being saved:</h2>
+
+      <ul>
+      <% @olympic_medal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :athlete_name %><br>
+    <%= f.text_field :athlete_name %>
+  </div>
+  <div class="field">
+    <%= f.label :event %><br>
+    <%= f.text_field :event %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :medal_type %><br>
+    <%= f.text_field :medal_type %>
+  </div>
+  <div class="field">
+    <%= f.label :event_date %><br>
+    <%= f.text_field :event_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
